@@ -85,12 +85,8 @@ int main(){
 
 int LogIn(Application::User& user) {
 	//Menu usera
-	if (user.GetRole() == "admin") {
-		std::cout << "Logout/Change Password/Easter Egg: 0/1/2" << "\n";
-	}
-	else {
-		std::cout << "Logout/Change Password: 0/1" << "\n";
-	}
+	std::cout << "Logout/Change Password: 0/1" << "\n";
+	
 	std::string input;
 	std::cin >> input;
 	if (input == "0") {
@@ -108,10 +104,6 @@ int LogIn(Application::User& user) {
 			std::cout << "Password Changed!" << "\n";
 		}
 		//Vráti nás na zaèiatok tejto funkcie
-		LogIn(user);
-	}
-	else if (input == "2" && user.GetRole() == "admin") {
-		std::cout << "You Found Me!" << "\n";
 		LogIn(user);
 	}
 	else {
